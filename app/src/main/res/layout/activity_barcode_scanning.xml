@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    tools:background="@color/white"
+    tools:context=".ui.BarcodeScanningActivity">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/cameraPreview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.example.qrscanner.ui.custom.ViewFinderOverlay
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layerType="software" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="16dp"
+        android:fitsSystemWindows="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvScanningWith"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/scanning_with"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ivScannerLogo"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/scanner_logo_bg"
+            android:contentDescription="@string/scanner_library"
+            android:padding="8dp"
+            android:src="@drawable/zxing" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivFlashControl"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_margin="16dp"
+        android:background="@drawable/flash_button_bg"
+        android:contentDescription="@string/turn_flash_on_off"
+        android:padding="12dp"
+        android:src="@drawable/ic_rount_flash_on" />
+
+</FrameLayout>
